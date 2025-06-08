@@ -27,7 +27,7 @@ if uploaded_file:
     st.text_area("Below is the extracted text from your PDF:", text, height=300)
 
     # Load summarizer model (this will cache after first run)
-    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6")
+    summarizer = pipeline("summarization", model="sshleifer/distilbart-cnn-12-6", device=-1 )
 
     if st.button("🧠 Summarize"):
         with st.spinner("🧠 Summarizing, please wait..."):
